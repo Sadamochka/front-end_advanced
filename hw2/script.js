@@ -1,18 +1,22 @@
-let N = Math.round(parseFloat(prompt('Write the first number', '')));
-while (isNaN(N)){N = Math.round(parseFloat(prompt('Write the first number', '')));
+let firstNumberN = Number(prompt("Введіть ціле число N:"));
+let secondNumberM = Number(prompt("Введіть ціле число M:"));
+
+while (!Number.isInteger(firstNumberN) || firstNumberN <= 0 || isNaN(firstNumberN)){
+    firstNumberN = Number(prompt("Число N не було коректно введено:", firstNumberN))
+}
+while (!Number.isInteger(secondNumberM) || secondNumberM <= firstNumberN || isNaN(secondNumberM)){
+    secondNumberM = Number(prompt("Число M не було коректно введено:", secondNumberM))
 }
 
-let M = Math.round(parseFloat(prompt('Write second number', '')));
-while (isNaN(M)) {M = Math.round(parseFloat(prompt('Write second number', '')));
+let sum = 0;
+let skip = confirm("Чи пропускати парні?");
+for (let i = firstNumberN; i <= secondNumberM; i++) {
+  if (skip && i % 2 === 0) {
+    continue;
+  }
+  sum += i;
 }
 
-let removeEven = confirm('Remove even numbers?');
-let result = 0;
-
-for (let did = N; did <= M; did++) {
-	if (removeEven && did % 2 === 0) {
-		continue;
-	}
-	result += did;
-}
-console.log('The result: ', result, '!')
+console.log(`Пропускаємо парні числа? ${skip}
+Результат суми чисел ${firstNumberN} і ${secondNumberM}: ${sum}
+`)
