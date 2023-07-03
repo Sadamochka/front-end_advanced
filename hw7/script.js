@@ -25,5 +25,5 @@ function getMySalary() {
 	const profit = +(salary - taxes).toFixed(3);
 	console.log({ salary, taxes, profit});
 }
-setInterval(getMySalary.bind(ukraine), 1600);
+setInterval(getMySalary.bind(ukraine), 10000);
 // 
