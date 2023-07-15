@@ -1,5 +1,6 @@
 body {
-	background: url(img/5ec6e72dbc77e.jpg) 0/auto 100% no-repeat;
+	background: url(img/5ec6e72dbc77e.jpg) 0/auto 140% no-repeat;
+	width: 100%;
 	height: 100vh;
 	overflow: hidden;
 	display: grid;
